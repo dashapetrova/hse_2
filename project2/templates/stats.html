@@ -1,0 +1,152 @@
+﻿<html>
+<head>
+	<title>stat</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<style>
+		h1{
+			color:#1f8cb8;
+			font-size:50px;
+			text-align: center;
+			font-family: Palatino, "Palatino Linotype", serif;
+			margin: 10px;
+		}
+		nav {
+  			background-color: #FFF;
+		}
+		nav li {
+  			margin: 0;
+  			padding: 0 10px;
+  			display: inline;
+		}
+		nav ul {
+  			display: inline;
+		}
+		.contact-btn {
+			float: right;
+		}
+		.contact-btn a {
+ 			 margin-right: 30px;
+ 			 padding: 8px 18px;
+ 			 border: 1px solid #204156;
+		}
+		.contact-btn a:active {
+  			position: relative;
+			bottom: 2px;
+		}
+		nav a {
+			height: 60px;
+  			line-height: 60px;
+  			color: #204156;
+  			text-decoration: none;
+		}
+		.pole {
+			background-image: url("http://lookw.ru/1/652/1402264476-oboi-1920h1080.-siyanie-vesny-20.jpg");
+			background-size: cover;
+			padding: 100px;
+			text-align: center;
+			font-size: 20px;
+		}
+		.img-responsive{
+		height:150px;
+		width:200px;
+		}
+		td, th{
+			font-size: 25px;
+		}
+		
+	</style>
+</head>
+<body>	
+	<h1>Statistics</h1>
+	<div class='pole'>
+	Number of answers: {{vsego}}
+	<h2 class="sub-header">Salut vs fireworks</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Picture</th>
+                  <th>Salut</th>
+                  <th>Fireworks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="{{url_for('static', filename='11.jpg')}}" class="img-responsive" /></td>
+                  <td>All:{{ ns1 }}% <br> Men:{{nm1}}% <br>Women:{{nw1}}%</td>
+                  <td>All:{{ nf1 }}% <br> Men:{{mm1}}% <br>Women:{{mw1}}%</td>
+
+                </tr>
+                <tr>
+                  <td><img src="{{url_for('static', filename='12.jpg')}}" class="img-responsive" /></td>
+                  <td>All:{{ ns2 }}% <br> Men:{{nm2}}% <br>Women:{{nw2}}%</td>
+                  <td>All:{{ nf2 }}% <br> Men:{{mm2}}% <br>Women:{{mw2}}%</td>
+
+                </tr>
+                <tr>
+                  <td><img src="{{url_for('static', filename='17.jpg')}}" class="img-responsive" /></td>
+                  <td>All:{{ ns3 }}%<br>Men:{{nm3}}% <br>Women:{{nw3}}%</td>
+                  <td>All:{{ nf3 }}%<br> Men:{{mm3}}% <br>Women:{{mw3}}%</td>
+
+                </tr>
+                <tr>
+                  <td><img src="{{url_for('static', filename='19.jpg')}}" class="img-responsive"/></td>
+                  <td>All:{{ ns4 }}%<br>Men:{{nm4}}% <br>Women:{{nw4}}%</td>
+                  <td>All:{{ nf4 }}%<br> Men:{{mm4}}% <br>Women:{{mw4}}%</td>
+
+              </tbody>
+            </table>
+          </div>
+
+ 	<h2 class="sub-header">Divan/sofa vs kanape</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Picture</th>
+                  <th>Divan/sofa</th>
+                  <th>Kanape</th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td><img src="{{url_for('static', filename='13.jpg')}}" class="img-responsive" /></td>
+                  <td>All:{{ ns5 }}%<br>Men:{{nm5}}% <br>Women:{{nw5}}%</td>
+                  <td>All:{{ nf5 }}%<br> Men:{{mm5}}% <br>Women:{{mw5}}%</td>
+
+                </tr>
+                <tr>
+                  <td><img src="{{url_for('static', filename='14.jpg')}}" class="img-responsive" /></td>
+                  <td>All:{{ ns6 }}%<br>Men:{{nm6}}% <br>Women:{{nw6}}%</td>
+                  <td>All:{{ nf6 }}%<br> Men:{{mm6}}% <br>Women:{{mw6}}%</td>
+
+                </tr>
+                <tr>
+                  <td><img src="{{url_for('static', filename='20.jpg')}}" class="img-responsive" /></td>
+                  <td>All:{{ ns7 }}% <br>Men:{{nm7}}% <br>Women:{{nw7}}%</td>
+                  <td>All:{{ nf7 }}%<br> Men:{{mm7}}% <br>Women:{{mw7}}%</td>
+
+                </tr>
+                <tr>
+                  <td><img src="{{url_for('static', filename='16.jpg')}}" class="img-responsive"/></td>
+                  <td>All:{{ ns8 }}%<br>Men:{{nm8}}% <br>Women:{{nw8}}%</td>
+                  <td>All:{{ nf8 }}%<br> Men:{{mm8}}% <br>Women:{{mw8}}%</td>
+              </tbody>
+            </table>
+          </div>
+
+
+	</div>
+	<nav>
+      		<ul>
+        		<li><a href="/stats">Statistics</a></li>
+        		<li><a href="/search">Search</a></li>
+			<li><a href="/json">Results json</a></li>
+      		</ul>
+      		<div class="contact-btn"><a href = "/"><b>Back to form</b></a>
+      		</div>
+    	</nav>
+</body>
+</html>
