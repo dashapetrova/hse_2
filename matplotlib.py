@@ -3,13 +3,13 @@ import re
 import matplotlib.pyplot as plt
 
 
-def link:
+def link():
     req = urllib.request.Request('http://wiki.dothraki.org/Vocabulary')
     with urllib.request.urlopen(req) as response:
         html = response.read().decode('utf-8')
     return html
 
-def letters:
+def letters():
     html = link()
     lets = {}
     reLetter = re.compile('<span class="mw-headline" id="(\w)">(.*?)</span></h3>(.*?)<h3>', re.DOTALL)
