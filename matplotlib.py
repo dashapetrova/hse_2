@@ -59,7 +59,7 @@ def num_parts():
             if j == 'num.':
                 n7 = int(parts['numerals']) + 1
                 parts['numerals'] = str(n7)
-                if j == 'prep.':
+            if j == 'prep.':
                 n8 = int(parts['prepositions']) + 1
                 parts['prepositions'] = str(n8)
             if j == 'conj.':
