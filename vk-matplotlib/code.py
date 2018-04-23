@@ -60,7 +60,7 @@ for  i, id_p in enumerate(ids):
     result = response.read().decode('utf-8')
     result = json.loads(result)
     total = result['response']['count']
-        offs_2 = []
+    offs_2 = []
     x = total//100
     i=0
     while i <= x:
