@@ -1,0 +1,68 @@
+﻿<html>
+<header>
+	<title>hello</title>
+	<style>
+	   body {
+	    	background: #000 url(https://pbs.twimg.com/media/Dfb4QdUX0AIFKub.jpg);
+		background-size: cover;
+		background-color: rgba(0,0,0,.7);
+		background-blend-mode: darken;
+		}
+	   h1{
+		color: white;
+		font-family: "Сomic Sans MS", Cursive;
+		font-size: 30px;
+		position: absolute;
+		top: 30%;
+		left: 25%;
+	     }
+	   p{
+		color: white;
+		font-family: "Сomic Sans MS", Cursive;
+		font-size: 40px;
+		position: absolute;
+		top: 10%;
+		left: 20%;
+	     }
+	   .textField {
+    		width: 300px; /* Ширина поля */
+		padding: 10px; /* Поля */
+    		color: #FFFFFF; /* Цвет текста */
+		background: transparent;
+		border: none;
+		border-bottom: 5px solid white;
+		position: absolute;
+		top: 33%;
+		left: 48%;
+		font-size: 25px;
+	    }	
+	    .button{
+		width: 100px;
+		height: 53px;
+		background: white;
+		border: none;
+		position: absolute;
+		top: 33%;
+		left: 73%;
+		font-family: "Сomic Sans MS", Cursive;
+		font-size: 25px;
+	    }
+	    img{
+		position: absolute;
+		top: 50%;
+		left: 40%;
+		width: 220px;
+		height: 220px;
+	    }
+  	</style>
+</header>
+<body>
+	<p>Get the graph of your hashtags by frequency</p>
+	<form method="GET">
+    	<h1>Enter twitter acc: @</h1>
+	<input type="text" name="username" value="" class='textField'>
+    	<input type="submit" value="Send" class='button'>
+	</form>
+	<img src="{{url_for('static', filename='logo.png')}}">
+</body>
+</html>

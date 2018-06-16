@@ -1,0 +1,45 @@
+﻿
+<html>
+<header>
+	<title>hello</title>
+	<style>
+	   body {
+	    	background: #000 url(https://pbs.twimg.com/media/Dfb4QdUX0AIFKub.jpg);
+		background-size: cover;
+		background-color: rgba(0,0,0,.7);
+		background-blend-mode: darken;
+	   }
+	   h1{
+		color: white;
+		font-family: "Сomic Sans MS", Cursive;
+		font-size: 30px;
+		position: absolute;
+		top: 5%;
+		left: 15%;
+	   }
+	   img{
+		position: absolute;
+		top: 17%;
+		left: 26%;
+	   }
+	   .name{
+		color: #476BD6;
+	   }
+	   .contact-btn{
+		position: absolute;
+		bottom: 30px;
+		right: 30px;
+		font-size: 30px;
+	   }
+	   b{
+		color: white;
+	   }
+  	</style>
+</header>
+<body>
+	<h1>Here is the graph of hashtags by frequency for <nobr class='name'>@{{ name }}</nobr></h1>
+	<img src="{{url_for('static', filename='freq.png')}}">
+	<div class="contact-btn"><a href = "/"><b>Back to form</b></a>
+      	</div>
+</body>
+</html>
