@@ -8,6 +8,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from flask import Flask
 from flask import render_template, request
+import time
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -34,7 +35,6 @@ def index():
             rehash = re.compile('#.*? ', flags= re.DOTALL)
             tags = rehash.findall(tweet.text)
             for i in tags:
-                stuff = '[\.\?!"@№;%:?*()-+=$&:;\'"><,/\|\\~`{}…◡•]'
                 i = re.sub(r"[^A-Za-zА-Яа-я#\s]+", '', i)
                 i = i.split()
                 resh = '#'
