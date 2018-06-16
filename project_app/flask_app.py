@@ -2,13 +2,23 @@
 #скачивает твиты этого пользователя,
 #строит график частотности хэштегов в течение времени существования аккаунта
 import tweepy
-from credentials import *
+import time
 import re
+
+#
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
+#
 from flask import Flask
 from flask import render_template, request
-import time
+
+
+consumer_key = 'ti1OAeuqtNYFiiBxClFxlGVbV'
+consumer_secret = 'y4DnQBwmt5acY8Ka8EksQAcKvGcY5Bo6PwWHKtHaotf8gUdTgT'
+access_token = '865277968616181760-792B86JiiE3axVao9S6XGPHdNf22UF9'
+access_token_secret = 'kQQAJoCVu80FC9nWUnV0q7BKBKlzJ9K6KN8gLGoM7ScRO'
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -22,12 +32,11 @@ def limit_handled(cursor):
             yield cursor.next()
         except tweepy.RateLimitError:
             time.sleep(15 * 60)
-            
+
 @app.route('/')
 def index():
     if request.args:
         username = request.args['username']
-        user = api.get_user(username)
         hashtags = []
         for tweet in limit_handled(tweepy.Cursor(api.user_timeline, screen_name=username).items()):
             str_tw = tweet.text
@@ -58,9 +67,6 @@ def index():
         plt.xticks(rotation=90)
         plt.tick_params(axis='x', which='major', labelsize=6)
         plt.bar(x, y, color='g')
-        plt.savefig('static/freq.png')
+        plt.savefig('mysite/static/freq.png')
         return render_template('graph.html', name = username)
     return render_template('index.html')
-
-if __name__ == '__main__':
-   app.run(debug = True)
